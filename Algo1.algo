@@ -1,0 +1,47 @@
+// Main module
+
+START
+
+// w= number of words, v= vowels, n=nbr of characters
+
+w=0
+v=0
+i=1
+SEPARATOR ">"
+
+WRITE  "Enter your sentence please"
+
+READ sentence
+
+n= LENGTH (sentence)
+m= LOWERCASE (sentence)
+
+WHILE i<=n  DO 
+l= SUBSET(m,i,1)
+
+IF l="a" or l="o" or l="e" or l="i" or l="u" or l="y" THEN
+v=v+1
+
+WRITE l
+write v
+
+ENDIF
+
+IF l=" " THEN
+w=w+1
+
+WRITE l
+write w
+
+ENDIF
+
+i=i+1
+ENDWHILE
+
+WRITE "Number of characters " , n
+WRITE "Number of words " , w+1
+WRITE "Number of vowels " , v
+
+
+
+END
