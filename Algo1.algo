@@ -1,12 +1,13 @@
-// Main module
+\\ This program is meant to be run on LARP
 
 START
 
-// w= number of words, v= vowels, n=nbr of characters
-
+\\ w stands for word and v for vowel
 w=0
 v=0
 i=1
+
+\\ A separator is used instead of spaces
 SEPARATOR ">"
 
 WRITE  "Enter your sentence please"
@@ -14,34 +15,29 @@ WRITE  "Enter your sentence please"
 READ sentence
 
 n= LENGTH (sentence)
-m= LOWERCASE (sentence)
+
+\\ WRITE n
 
 WHILE i<=n  DO 
-l= SUBSET(m,i,1)
 
-IF l="a" or l="o" or l="e" or l="i" or l="u" or l="y" THEN
+\\ This command will read the letter in the place number i in the sentence
+l= SUBSET(sentence,i,1)
+
+\\ LARP does not recognise uppercase vowels so I had to add them in list
+IF l="a" or l="o" or l="e" or l="i" or l="u" or l="y" or l="A" or l="O" or l="E" or l="I" or l="U" or l="Y" THEN
 v=v+1
-
-WRITE l
-write v
-
+\\ write l
+\\ write v
 ENDIF
 
 IF l=" " THEN
 w=w+1
-
-WRITE l
-write w
-
+\\ write l
+\\ write w
 ENDIF
-
 i=i+1
 ENDWHILE
-
-WRITE "Number of characters " , n
-WRITE "Number of words " , w+1
-WRITE "Number of vowels " , v
-
-
-
+WRITE "Number of characters =" , n
+WRITE "Number of words =" , w+1
+WRITE "Number of vowels =" , v
 END
